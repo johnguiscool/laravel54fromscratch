@@ -8,13 +8,9 @@
 
 <body>
 
-  <h1>Hello {{ $name }} </h1>
-
-  @foreach ($tasks as $task)
+  <h1>Hello </h1>
 
     <li> {{$task->body}} </li>
-
-  @endforeach
 
 
 </body>

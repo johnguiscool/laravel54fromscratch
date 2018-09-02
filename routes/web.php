@@ -11,17 +11,20 @@
 |
 */
 
-Route::get('/', function () {
+Route::get('/tasks', function () {
 
-    $tasks = [
-      'Go to the store',
-      'Finish screencast',
-      'Clean the house'
-    ];
+    $tasks = DB::table('tasks')->get();
 
-    return view('welcome',['tasks' => $tasks, 'name' => 'Jeffrey']);
+    return view('tasks.index',['tasks' => $tasks, 'name' => 'Jeffrey']);
 });
 
 Route::get('/about', function () {
     return view('about');
+});
+
+
+Route::get('/tasks/{task}', function ($id) {
+  $task = DB::table('tasks')->find($id);
+
+  return view('tasks.show',['task'=>$task]);
 });
