@@ -12,7 +12,7 @@
 
   @foreach ($tasks as $task)
 
-    <li> <a href="/public/tasks/{{$task->id}}"> {{$task->body}} </a> </li>
+    <li> <a href="/tasks/{{$task->id}}"> {{$task->body}} </a> </li>
 
   @endforeach
 
